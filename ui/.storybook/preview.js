@@ -1,5 +1,7 @@
 import '../dev.css'
+import '@storybook/addon-console';
 import { withThemeByDataAttribute } from "@storybook/addon-themes";
+
 /** @type { import('@storybook/html').Preview } */
 const preview = {
   parameters: {
@@ -16,8 +18,8 @@ const preview = {
 export const decorators = [
   withThemeByDataAttribute({
     themes: {
-      light: "light-theme",
-      dark: "dark-theme",
+      light: "light",
+      dark: "dark",
     },
     defaultTheme: "light",
     attributeName: "data-theme",
