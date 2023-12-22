@@ -4,9 +4,6 @@ on:
   - push
   - pull_request
 
-defaults:
-  run:
-    working-directory: admin
 jobs:
   chromatic:
     runs-on: ubuntu-latest
