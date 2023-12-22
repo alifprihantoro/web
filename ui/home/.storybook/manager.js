@@ -6,7 +6,7 @@ addons.setConfig({
     base: 'dark',
     brandTitle: 'Alief Prihantoro',
     brandUrl: 'https://alifprihantoro.netlify.com',
-    brandImage: '/logo.svg',
+    brandImage: '/favicon-32x32.png',
     brandTarget: '_self',
   }),
 });
