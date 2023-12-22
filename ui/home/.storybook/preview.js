@@ -1,5 +1,4 @@
 import '../dev.css'
-import '@storybook/addon-console';
 import { withThemeByDataAttribute } from "@storybook/addon-themes";
 
 /** @type { import('@storybook/html').Preview } */
