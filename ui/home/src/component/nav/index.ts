@@ -26,6 +26,7 @@ export const LIST_NAV = [
     title: 'credential',
   },
 ]
+    console.log(LIST_NAV)
 const HTML_LIST_NAV = LIST_NAV.map(({ icon, title, link }) => {
   return html`
     <li class="m-auto align-middle">
