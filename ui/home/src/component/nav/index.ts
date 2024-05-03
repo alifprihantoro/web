@@ -26,7 +26,6 @@ export const LIST_NAV = [
     title: 'credential',
   },
 ]
-    console.log(LIST_NAV)
 const HTML_LIST_NAV = LIST_NAV.map(({ icon, title, link }) => {
   return html`
     <li class="m-auto align-middle">
@@ -40,17 +39,17 @@ const HTML_LIST_NAV = LIST_NAV.map(({ icon, title, link }) => {
   `
 })
 export default html`
-    <nav
-      class="fixed bottom-0 left-0 md:left-auto
+  <nav
+    class="fixed bottom-0 left-0 md:left-auto
       md:right-0 z-50 w-full md:w-fit md:h-full
       flex justify-center items-center"
-      data-aos="zoom-in">
-      <div class="w-fit h-fit m-auto ">
-        <ul
-          class="menu menu-horizontal md:menu-vertical bg-base-200 rounded-box m-auto align-middle">
-          ${HTML_LIST_NAV}
-        </ul>
-        ${Darkmode}
-      </div>
-    </nav>
-  `
+    data-aos="zoom-in">
+    <div class="w-fit h-fit m-auto ">
+      <ul
+        class="menu menu-horizontal md:menu-vertical bg-base-200 rounded-box m-auto align-middle">
+        ${HTML_LIST_NAV}
+      </ul>
+      ${Darkmode}
+    </div>
+  </nav>
+`
