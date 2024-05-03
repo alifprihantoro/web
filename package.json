@@ -4,14 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "tailwind:dev": "tailwindcss -i ./tailwind.css -o ./ui/home/dev.css --watch",
-    "dev": "pnpm tailwind:dev & pnpm --filter ui storybook"
+    "tailwind-home:dev": "tailwindcss -i ./tailwind.css -o ./ui/home/dev.css --watch",
+    "tailwind-web:dev": "tailwindcss -i ./tailwind.css -o ./web/main/dev.css --watch",
+    "dev:home": "concurrently \"pnpm tailwind-home:dev\" \"pnpm --filter @ui/home storybook\"",
+    "dev:web": "concurrently \"pnpm tailwind-web:dev\" \"pnpm --filter web dev\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^6.12.0",
+    "concurrently": "^8.2.2",
     "daisyui": "^4.4.2",
     "eslint": "^8.54.0",
     "prettier": "^3.1.0",
