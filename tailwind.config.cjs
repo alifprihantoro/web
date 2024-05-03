@@ -3,7 +3,7 @@ const themes = require("daisyui/src/theming/themes")
 /* eslint-disable no-undef */
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./ui/src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+  content: ['./ui/**/src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
     extend: {
       fontFamily: {

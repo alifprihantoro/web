@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "tailwind:dev": "tailwindcss -i ./tailwind.css -o ./ui/dev.css --watch",
+    "tailwind:dev": "tailwindcss -i ./tailwind.css -o ./ui/home/dev.css --watch",
     "dev": "pnpm tailwind:dev & pnpm --filter ui storybook"
   },
   "keywords": [],
