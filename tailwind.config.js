@@ -1,6 +1,6 @@
 // const plugin = require('tailwindcss/plugin')
 const themes = require("daisyui/src/theming/themes")
-const getListcontent = require('./getListcontent')
+const getListcontent = require('configs/getListcontent')
 const content = getListcontent(process.env.CONTENT_TYPE)
 /* eslint-disable no-undef */
 /** @type {import('tailwindcss').Config} */
