@@ -1,9 +1,11 @@
-const plugin = require('tailwindcss/plugin')
+// const plugin = require('tailwindcss/plugin')
 const themes = require("daisyui/src/theming/themes")
+const getListcontent = require('./getListcontent')
+const content = getListcontent(process.env.CONTENT_TYPE)
 /* eslint-disable no-undef */
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./ui/**/src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+  content,
   theme: {
     extend: {
       fontFamily: {
