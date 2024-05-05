@@ -27,6 +27,9 @@ importers:
       eslint:
         specifier: ^8.54.0
         version: 8.56.0
+      myutils:
+        specifier: workspace:^
+        version: link:utils
       prettier:
         specifier: ^3.1.0
         version: 3.1.1
@@ -111,15 +114,9 @@ importers:
 
   ui/home:
     dependencies:
-      '@iconify/iconify':
-        specifier: ^3.1.1
-        version: 3.1.1
       '@storybook/addon-console':
         specifier: ^2.0.0
         version: 2.0.0(@storybook/addon-actions@7.6.6)
-      aos:
-        specifier: 3.0.0-beta.6
-        version: 3.0.0-beta.6
     devDependencies:
       '@storybook/addon-a11y':
         specifier: ^7.6.6
@@ -148,9 +145,6 @@ importers:
       '@storybook/testing-library':
         specifier: ^0.2.2
         version: 0.2.2
-      '@types/aos':
-        specifier: ^3.0.7
-        version: 3.0.7
       chromatic:
         specifier: ^10.2.0
         version: 10.2.0
@@ -175,6 +169,16 @@ importers:
       vite:
         specifier: ^5.0.0
         version: 5.0.10(@types/node@20.10.5)(lightningcss@1.24.1)
+
+  utils:
+    dependencies:
+      aos:
+        specifier: 3.0.0-beta.6
+        version: 3.0.0-beta.6
+    devDependencies:
+      '@types/aos':
+        specifier: ^3.0.7
+        version: 3.0.7
 
   web:
     dependencies:
@@ -1423,6 +1427,7 @@ packages:
 
   '@iconify/iconify@3.1.1':
     resolution: {integrity: sha512-1nemfyD/OJzh9ALepH7YfuuP8BdEB24Skhd8DXWh0hzcOxImbb1ZizSZkpCzAwSZSGcJFmscIBaBQu+yLyWaxQ==}
+    deprecated: no longer maintained, switch to modern iconify-icon web component
 
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -8837,9 +8842,9 @@ snapshots:
       mime-types: 2.1.35
       negotiator: 0.6.3
 
-  acorn-jsx@5.3.2(acorn@8.11.2):
+  acorn-jsx@5.3.2(acorn@8.11.3):
     dependencies:
-      acorn: 8.11.2
+      acorn: 8.11.3
 
   acorn@8.11.2: {}
 
@@ -9796,8 +9801,8 @@ snapshots:
 
   espree@9.6.1:
     dependencies:
-      acorn: 8.11.2
-      acorn-jsx: 5.3.2(acorn@8.11.2)
+      acorn: 8.11.3
+      acorn-jsx: 5.3.2(acorn@8.11.3)
       eslint-visitor-keys: 3.4.3
 
   esprima@4.0.1: {}

@@ -2,6 +2,7 @@
 import { SEO } from 'astro-seo'
 const { tittle, description, username, image, type, icon, Pages } = Astro.props
 ---
+
 <html lang='en'>
   <head>
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
@@ -29,7 +30,7 @@ const { tittle, description, username, image, type, icon, Pages } = Astro.props
   </head>
   <body set:html={Pages}>
     <script>
-      import '@ui/home/src/script/main'
+      import 'myutils/src/main'
     </script>
   </body>
 </html>

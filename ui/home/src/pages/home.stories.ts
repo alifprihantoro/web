@@ -1,5 +1,5 @@
 import home from './home'
-import Script from '../script/main?url'
+import Script from 'myutils/src/main?url'
 
 // More on how to set up stories at: https://storybook.js.org/docs/html/writing-stories/introduction
 export default {
@@ -8,6 +8,5 @@ export default {
   render: () => {
     return `${home}<script src="${Script}"></script>`
   },
-
 }
 export const Home = {}
