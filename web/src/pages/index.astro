@@ -1,15 +1,16 @@
 ---
-import { tittle, description, username, image, type, icon } from '../data.json'
+import configs from 'configs/data/home/pages'
 import Pages from '@ui/home'
 import Layout from '../layouts.astro'
+const { tittle, description, username, image, type, icon } = configs
 ---
 
 <Layout
-	tittle={tittle}
-	description={description}
-	username={username}
-	image={image}
-	type={type}
-	icon={icon}
-	Pages={Pages}
+  tittle={tittle}
+  description={description}
+  username={username}
+  image={image}
+  type={type}
+  icon={icon}
+  Pages={Pages}
 />

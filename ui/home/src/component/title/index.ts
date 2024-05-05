@@ -1,5 +1,5 @@
 import { html } from '../../utils/html'
-import { LIST_NAV } from '../nav'
+import LIST_NAV from 'configs/data/home/nav'
 
 export default function Title(index: number, content?: string | string[]) {
   const { icon, title, link } = LIST_NAV[index]

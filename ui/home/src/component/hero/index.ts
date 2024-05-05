@@ -1,9 +1,5 @@
 import Component from './component'
-
-const IMG_URL = '/profil.png'
-const TITLE = 'ALIEF PRIHANTORO'
-const DESCRIPTION = ` Hello, I'm a web developer. my specific focus is development, tools
-and performance. I like simple web. I have some plugins on neovim.`
+import { IMG_URL, TITLE, DESCRIPTION } from 'configs/data/home/hero'
 
 export const args = { IMG_URL, TITLE, DESCRIPTION }
 
