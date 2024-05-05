@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "getContent": "git clone https://github.com/alifprihantoro/new-content.git --depth=1 contents",
     "tailwind-home:dev": "CONTENT_TYPE=home tailwindcss -i ./tailwind.css -o ./ui/home/dev.css --watch",
     "tailwind-blog:dev": "CONTENT_TYPE=blog tailwindcss -i ./tailwind.css -o ./ui/blog/dev.css --watch",
-    "tailwind-web:dev": "CONTENT_TYPE=web tailwindcss -i ./tailwind.css -o ./web/main/dev.css --watch",
+    "tailwind-web:dev": "CONTENT_TYPE=web tailwindcss -i ./tailwind.css -o ./web/src/dev.css --watch",
     "dev:home": "concurrently \"pnpm tailwind-home:dev\" \"pnpm --filter @ui/home dev\"",
     "dev:blog": "concurrently \"pnpm tailwind-blog:dev\" \"pnpm --filter @ui/blog dev\"",
     "dev:web": "concurrently \"pnpm tailwind-web:dev\" \"pnpm --filter web dev\""

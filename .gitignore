@@ -131,3 +131,4 @@ dist
 .pnp.*
 dev.css
 storybook-static
+/contents
