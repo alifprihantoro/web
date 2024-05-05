@@ -1,6 +1,6 @@
 import { html } from '../../utils/html'
 import DarkComponent from './'
-import Script from '../../script/darkBtn?url'
+import Script from 'assets/ts/darkBtn?url'
 
 // More on how to set up stories at: https://storybook.js.org/docs/html/writing-stories/introduction
 export default {

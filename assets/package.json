@@ -1,8 +1,8 @@
 {
-  "name": "myutils",
+  "name": "assets",
   "version": "1.0.0",
   "description": "all utils",
-  "main": "src/main.ts",
+  "main": "ts/main.ts",
   "dependencies": {
     "aos": "3.0.0-beta.6"
   },
