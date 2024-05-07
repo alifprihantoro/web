@@ -1,3 +1,3 @@
 import('./aos')
 import('./darkBtn')
-import('./clientIcon')
+import('./icons')

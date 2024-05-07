@@ -1,7 +1,7 @@
 import { html } from '../../utils/html'
 // import { moon, sun } from 'assets/icons/darkBtn'
-import moon from 'assets/icons/darkBtn/moon.svg'
-import sun from 'assets/icons/darkBtn/sun.svg'
+import moon from 'assets/icons/darkBtn/moon.svg?url'
+import sun from 'assets/icons/darkBtn/sun.svg?url'
 import getIcons from 'assets/ts/iconHtml'
 
 export default html`
@@ -12,8 +12,8 @@ export default html`
     <label class="swap swap-rotate">
       <!-- this hidden checkbox controls the state -->
       <input type="checkbox" class="theme-controller" id="theme-mode" />
-      <span class="swap-off fill-current w-5"> ${getIcons(sun)} </span>
-      <span class="swap-on fill-current w-5"> ${getIcons(moon)} </span>
+      <span class="swap-off fill-current w-5"> ${getIcons(sun,'DARK_BTN')} </span>
+      <span class="swap-on fill-current w-5"> ${getIcons(moon,'DARK_BTN')} </span>
     </label>
   </button>
 `
