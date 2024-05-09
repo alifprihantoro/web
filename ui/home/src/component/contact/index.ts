@@ -1,22 +1,20 @@
 import { html } from '../../utils/html'
 import Title from '../title'
 import LIST_CONTACT from 'configs/data/home/listContact'
-import listSosmed from 'assets/ts/icons/sosmed'
+import getIcon from 'assets/script/server/iconHtml'
 
 const HTML_LIST_CONTACT = () => {
-  const contentList = []
-  for (const key in LIST_CONTACT) {
-    const listName = key as 'email'
-    const username = LIST_CONTACT[listName]
-    const icon = listSosmed[listName]
-    contentList.push(html`
+  const contentList = LIST_CONTACT.map(([name, username, icon]) => {
+    return html`
       <div
         class="tooltip before:-translate-x-3 my-1 capitalize font-Rokkit font-bold"
         data-tip="${username}">
-        <button class="btn btn-sm md:btn-md rounded-lg">${icon}</button>
+        <button class="btn btn-sm md:btn-md rounded-lg">
+          ${getIcon(icon, name)}
+        </button>
       </div>
-    `)
-  }
+    `
+  })
   return contentList.join('')
 }
 export default html`

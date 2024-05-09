@@ -1,5 +1,5 @@
 import home from './home'
-import Script from 'assets/ts/client/main?url'
+import Script from 'assets/script/client/main?url'
 
 // More on how to set up stories at: https://storybook.js.org/docs/html/writing-stories/introduction
 export default {

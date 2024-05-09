@@ -1,5 +1,5 @@
 import Component from './'
-import script from 'assets/ts/client/icons?url'
+import script from 'assets/script/client/icons?url'
 
 // More on how to set up stories at: https://storybook.js.org/docs/html/writing-stories/introduction
 export default {
