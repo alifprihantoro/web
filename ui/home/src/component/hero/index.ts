@@ -1,6 +1,6 @@
 import Component from './component'
-import { IMG_URL, TITLE, DESCRIPTION } from 'configs/data/home/hero'
+import { PROFILE_URL, TITLE, DESCRIPTION } from 'configs/data/site'
 
-export const args = { IMG_URL, TITLE, DESCRIPTION }
+export const args = { IMG_URL: PROFILE_URL, TITLE, DESCRIPTION }
 
-export default Component({ IMG_URL, TITLE, DESCRIPTION })
+export default Component({ IMG_URL: PROFILE_URL, TITLE, DESCRIPTION })
