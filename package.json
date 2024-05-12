@@ -5,12 +5,16 @@
   "main": "index.js",
   "scripts": {
     "getContent": "git clone https://github.com/alifprihantoro/new-content.git --depth=1 contents",
-    "tailwind-home:dev": "CONTENT_TYPE=home tailwindcss -i ./assets/tailwind.css -o ./ui/home/dev.css --watch",
-    "tailwind-blog:dev": "CONTENT_TYPE=blog tailwindcss -i ./assets/tailwind.css -o ./ui/blog/dev.css --watch",
-    "tailwind-web:dev": "CONTENT_TYPE=web tailwindcss -i ./assets/tailwind.css -o ./web/src/dev.css --watch",
-    "dev:home": "concurrently \"pnpm tailwind-home:dev\" \"pnpm --filter @ui/home dev\"",
-    "dev:blog": "concurrently \"pnpm tailwind-blog:dev\" \"pnpm --filter @ui/blog dev\"",
-    "dev:web": "concurrently \"pnpm tailwind-web:dev\" \"pnpm --filter web dev\""
+    "getRender": "git clone https://github.com/alifprihantoro/new-content.git --depth=1 contents",
+    "init": "concurrently \"pnpm getContent\" \"pnpm getRender\"",
+    "build:assets": "pnpm --filter assets build",
+    "build:tailwind": "CONTENT_TYPE=home tailwindcss -i ./assets/tailwind.css -o ./public/main.css",
+    "build:web": "pnpm --filter web build",
+    "dev:assets": "pnpm --filter assets dev",
+    "tailwind-home:dev": "CONTENT_TYPE=home tailwindcss -i ./assets/tailwind.css -o ./public/main.css --watch",
+    "tailwind-web:dev": "CONTENT_TYPE=web tailwindcss -i ./assets/tailwind.css -o ./public/main.css --watch",
+    "dev:home": "concurrently \"pnpm tailwind-home:dev\" \"pnpm --filter @ui/home dev\" \"pnpm assets\" ",
+    "dev:web": "concurrently \"pnpm tailwind-web:dev\" \"pnpm --filter web dev\" \"pnpm assets\""
   },
   "keywords": [],
   "author": "",
