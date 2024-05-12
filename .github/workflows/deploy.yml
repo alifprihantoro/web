@@ -58,7 +58,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       - name: lint
-        run: pnpm --parrarel lint
+        run: |
+          pnpm --parallel lint
       - name: Build web
         run: pnpm build:web
       - name: config git
