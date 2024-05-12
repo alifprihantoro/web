@@ -6,19 +6,6 @@ module.exports = {
   ...base,
   overrides: [
     {
-      files: ['**/*.tsx'],
-      extends: [
-        'eslint:recommended',
-        'plugin:react/recommended',
-        'plugin:@typescript-eslint/recommended',
-      ],
-      plugins: ['react'],
-      rules: {
-        'react/react-in-jsx-scope': 0,
-        'react/jsx-uses-react': 0,
-      },
-    },
-    {
       files: ['*.astro'],
       parser: 'astro-eslint-parser',
       parserOptions: {

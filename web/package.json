@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "astro dev --verbose --open",
     "start": "astro dev",
+    "lint": "eslint ./src/**/*.{ts,astro}",
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro"
@@ -15,5 +16,8 @@
     "astro": "^4.7.1",
     "astro-seo": "^0.8.0",
     "typescript": "^5.2.2"
+  },
+  "devDependencies": {
+    "eslint-plugin-astro": "^1.1.2"
   }
 }
