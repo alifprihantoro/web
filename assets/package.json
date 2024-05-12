@@ -3,10 +3,16 @@
   "version": "1.0.0",
   "description": "all utils",
   "main": "ts/main.ts",
+  "scripts": {
+    "build": "node ./esbuild.mjs",
+    "lint": "eslint ./script/**/*.ts",
+    "dev": "WATCH=true node ./esbuild.mjs"
+  },
   "dependencies": {
     "aos": "3.0.0-beta.6"
   },
   "devDependencies": {
-    "@types/aos": "^3.0.7"
+    "@types/aos": "^3.0.7",
+    "esbuild": "^0.21.1"
   }
 }
