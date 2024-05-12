@@ -1,0 +1,76 @@
+name: Chromatic UI Build
+
+on:
+  pull_request:
+    paths:
+      - 'ui/**'
+      - 'assets/script/**'
+    paths-ignore:
+      - "**/*.md"
+      - "**/package.json"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v42
+      - name: Set CHANGE_FILE variable
+        env:
+          file_change: ${{ steps.changed-files.outputs.all_changed_files }}
+        run: |
+          # Check if the file_change contains "/ui/home" and has a .ts extension
+          if [[ "$file_change" == "ui/home"* ]]; then
+            if [[ "$file_change" == "ui/blog"* ]]; then
+              echo "CHANGE_FILE=all" >> $GITHUB_ENV
+            else
+              echo "CHANGE_FILE=home" >> $GITHUB_ENV
+            fi
+          elif [[ "$file_change" == "ui/blog"* ]]; then
+            echo "CHANGE_FILE=blog" >> $GITHUB_ENV
+          elif [[ "$file_change" == "assets/script/"* ]]; then
+          # TODO: change this if blog has start dev
+            echo "CHANGE_FILE=home" >> $GITHUB_ENV
+          fi
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        with:
+          version: 8
+          run_install: false
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+      - name: Install dependencies
+        run: pnpm install
+      - name: lint
+        run: pnpm --parrarel lint
+      - name: Publish to Chromatic home
+        if: env.CHANGE_FILE == 'home' || env.CHANGE_FILE == 'all'
+        uses: chromaui/action@latest
+        with:
+          workingDir: ui/home
+          token: ${{ secrets.GITHUB_TOKEN }}
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN_ADMIN }}
+      - name: Publish to Chromatic blog
+        if: env.CHANGE_FILE == 'blog' || env.CHANGE_FILE == 'all'
+        uses: chromaui/action@latest
+        with:
+          workingDir: ui/blog
+          token: ${{ secrets.GITHUB_TOKEN }}
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN_ADMIN_HOME }}

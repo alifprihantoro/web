@@ -1,0 +1,79 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - 'master'
+    paths-ignore:
+      - "**/*.md"
+      - "**/.vscode/**"
+      - "**/package.json"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Checkout dist
+        uses: actions/checkout@v4
+        with:
+          path: 'dest'
+          ref: 'main'
+          repository: 'alifprihantoro/dist'
+          # token: ${{ secrets.BOOT_TOKEN }}
+          # persist-credentials: true
+      - name: Checkout public
+        uses: actions/checkout@v4
+        with:
+          path: 'dest'
+          ref: 'main'
+          repository: 'alifprihantoro/public'
+          # token: ${{ secrets.BOOT_TOKEN }}
+          # persist-credentials: true
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        with:
+          version: 8
+          run_install: false
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+      - name: Install dependencies
+        run: pnpm install
+      - name: lint
+        run: pnpm --parrarel lint
+      - name: Build web
+        run: pnpm build:web
+      - name: config git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+      - name: Push Dist
+        run: |
+          cd dist
+          git add .
+          git commit -m "[ci]: build"
+          git push
+      - name: Push Public
+        run: |
+          cd ../public
+          git add .
+          git commit -m "[ci]: build"
+          git push
