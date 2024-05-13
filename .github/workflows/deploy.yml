@@ -86,7 +86,7 @@ jobs:
         env:
           file_change: ${{ steps.changed-files.outputs.all_changed_files }}
         run: |
-          if [[ "$file_change" == "assets"* ]]; then
+          if [[ "$file_change" == *"assets"* ]]; then
             pnpm build:assets
           fi
       - name: Push Public
