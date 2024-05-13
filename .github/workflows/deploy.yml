@@ -19,7 +19,7 @@ jobs:
       - name: Checkout dist
         uses: actions/checkout@v4
         with:
-          path: 'dest'
+          path: 'dist'
           ref: 'main'
           repository: 'alifprihantoro/dist'
           # token: ${{ secrets.BOOT_TOKEN }}
@@ -27,7 +27,7 @@ jobs:
       - name: Checkout public
         uses: actions/checkout@v4
         with:
-          path: 'dest'
+          path: 'public'
           ref: 'main'
           repository: 'alifprihantoro/public'
           # token: ${{ secrets.BOOT_TOKEN }}
