@@ -72,12 +72,20 @@ jobs:
       - name: Push Dist
         run: |
           cd dist
-          git add .
-          git commit -m "[ci]: build"
-          git push
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "No uncommitted changes."
+          else
+            git add .
+            git commit -m "[ci]: build"
+            git push
+          fi
       - name: Push Public
         run: |
           cd public
-          git add .
-          git commit -m "[ci]: build"
-          git push
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "No uncommitted changes."
+          else
+            git add .
+            git commit -m "[ci]: build"
+            git push
+          fi
