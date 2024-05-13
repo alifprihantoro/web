@@ -5,9 +5,8 @@ on:
     paths:
       - 'ui/**'
       - 'assets/script/**'
-    paths-ignore:
-      - "**/*.md"
-      - "**/package.json"
+      - "!**/*.md"
+      - "!**/package.json"
 
 jobs:
   build:
