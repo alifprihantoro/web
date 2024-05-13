@@ -22,16 +22,16 @@ jobs:
           path: 'dist'
           ref: 'main'
           repository: 'alifprihantoro/dist'
-          # token: ${{ secrets.BOOT_TOKEN }}
-          # persist-credentials: true
+          token: ${{ secrets.BOOT_TOKEN }}
+          persist-credentials: true
       - name: Checkout public
         uses: actions/checkout@v4
         with:
           path: 'public'
           ref: 'main'
           repository: 'alifprihantoro/public'
-          # token: ${{ secrets.BOOT_TOKEN }}
-          # persist-credentials: true
+          token: ${{ secrets.BOOT_TOKEN }}
+          persist-credentials: true
       - name: Install Node.js
         uses: actions/setup-node@v3
         with:
