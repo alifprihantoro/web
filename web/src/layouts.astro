@@ -1,7 +1,6 @@
 ---
 import { SEO } from 'astro-seo'
 const { tittle, description, username, image, type, icon, Pages } = Astro.props
-import {PUBLIC_URL} from 'configs/data/site'
 ---
 
 <html lang='en'>
@@ -28,11 +27,11 @@ import {PUBLIC_URL} from 'configs/data/site'
         ],
       }}
     />
-    <link rel='stylesheet' type='text/css' href={`${PUBLIC_URL}/aos.css`}/>
-    <link rel='stylesheet' type='text/css' href={`${PUBLIC_URL}/main.css`}/>
+    <link rel='stylesheet' type='text/css' href={'/aos.css'}/>
+    <link rel='stylesheet' type='text/css' href={'/main.css'}/>
   </head>
   <body>
     <div set:html={Pages} />
-    <script is:inline src={`${PUBLIC_URL}/main.js`}></script>
+    <script is:inline src={'/main.js'}></script>
   </body>
 </html>

@@ -79,6 +79,16 @@ jobs:
             git commit -m "[ci]: build"
             git push
           fi
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v42
+      - name: Build Assets
+        env:
+          file_change: ${{ steps.changed-files.outputs.all_changed_files }}
+        run: |
+          if [[ "$file_change" == "assets"* ]]; then
+            pnpm build:assets
+          fi
       - name: Push Public
         run: |
           cd public
