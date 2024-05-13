@@ -1,3 +1,4 @@
+import { PROFILE_URL } from 'configs/data/site'
 const icon = document.querySelectorAll('span[data-icon]')
 for (let i = 0; i < icon.length; i++) {
   const el = icon[i] as HTMLElement
@@ -5,7 +6,7 @@ for (let i = 0; i < icon.length; i++) {
   if (!url) {
     continue
   }
-  fetch(url)
+  fetch(PROFILE_URL + url)
     .then((response) => response.text())
     .then((svgData) => {
       icon[i].innerHTML = svgData
