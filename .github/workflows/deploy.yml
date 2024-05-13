@@ -77,7 +77,7 @@ jobs:
           git push
       - name: Push Public
         run: |
-          cd ../public
+          cd public
           git add .
           git commit -m "[ci]: build"
           git push
