@@ -10,28 +10,28 @@
   },
   "main": "./src/pages/home.ts",
   "devDependencies": {
-    "@chromatic-com/storybook": "^1",
-    "@storybook/addon-a11y": "^8.0.10",
-    "@storybook/addon-docs": "^8.0.10",
-    "@storybook/addon-essentials": "^8.0.10",
-    "@storybook/addon-interactions": "^8.0.10",
-    "@storybook/addon-links": "^8.0.10",
-    "@storybook/addon-mdx-gfm": "^8.0.10",
-    "@storybook/addon-themes": "^8.0.10",
-    "@storybook/blocks": "^8.0.10",
-    "@storybook/html": "^8.0.10",
-    "@storybook/html-vite": "^8.0.10",
-    "chromatic": "^10.2.0",
-    "eslint-plugin-lit": "^1.10.1",
+    "@chromatic-com/storybook": "^1.5.0",
+    "@storybook/addon-a11y": "^8.1.10",
+    "@storybook/addon-docs": "^8.1.10",
+    "@storybook/addon-essentials": "^8.1.10",
+    "@storybook/addon-interactions": "^8.1.10",
+    "@storybook/addon-links": "^8.1.10",
+    "@storybook/addon-mdx-gfm": "^8.1.10",
+    "@storybook/addon-themes": "^8.1.10",
+    "@storybook/blocks": "^8.1.10",
+    "@storybook/html": "^8.1.10",
+    "@storybook/html-vite": "^8.1.10",
+    "chromatic": "^10.9.6",
+    "eslint-plugin-lit": "^1.14.0",
     "eslint-plugin-lit-a11y": "1.1.0-next.1",
-    "eslint-plugin-wc": "^2.0.4",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "storybook": "^8.0.10",
-    "vite": "^5.0.0"
+    "eslint-plugin-wc": "^2.1.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "storybook": "^8.1.10",
+    "vite": "^5.3.1"
   },
   "dependencies": {
     "@storybook/addon-console": "^3.0.0",
-    "@storybook/test": "^8.0.10"
+    "@storybook/test": "^8.1.10"
   }
 }
