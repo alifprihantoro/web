@@ -1,6 +1,7 @@
 ---
 import { SEO } from 'astro-seo'
 const { tittle, description, username, image, type, icon, Pages } = Astro.props
+import 'assets/tailwind.css'
 ---
 
 <html lang='en'>
@@ -27,10 +28,9 @@ const { tittle, description, username, image, type, icon, Pages } = Astro.props
         ],
       }}
     />
-    <link rel='stylesheet' type='text/css' href={'/aos.css'}/>
-    <link rel='stylesheet' type='text/css' href={'/main.css'}/>
+    <link rel='stylesheet' type='text/css' href={'/aos.css'} />
   </head>
-  <body>
+  <body class='bg-primary'>
     <div set:html={Pages} />
     <script is:inline src={'/main.js'}></script>
   </body>

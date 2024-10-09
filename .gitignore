@@ -135,3 +135,4 @@ storybook-static
 /dist
 /public
 *storybook.log
+configs/info

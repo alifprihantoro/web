@@ -1,9 +1,18 @@
 {
   "extends": "configs/tsconfig.json",
   "compilerOptions": {
+"plugins": [
+      {
+        "name": "@mdx-js/typescript-plugin"
+      }
+    ],
     "types": [
       "vite/client"
     ]
+  },
+"mdx": {
+    // Enable strict type checking in MDX files.
+    "checkMdx": true
   },
   "include": [
     "src"

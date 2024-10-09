@@ -1,7 +1,7 @@
 import { html } from '../../utils/html'
 import Title from '../title'
 import LIST_CONTACT from 'configs/data/home/listContact'
-import getIcon from 'assets/script/server/iconHtml'
+import getIcon from 'assets/script/dev/iconHtml'
 
 const HTML_LIST_CONTACT = () => {
   const contentList = LIST_CONTACT.map(([name, username, icon]) => {

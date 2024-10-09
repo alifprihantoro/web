@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.btn-primary {
-  color: white;
-}
-
 html {
   scroll-behavior: smooth;
 }

@@ -5,7 +5,7 @@ const opts = {
   entryPoints: [
     {
       out: 'main',
-      in: './script/client/main.ts',
+      in: './script/prod/main.ts',
     },
     {
       out: 'aos',

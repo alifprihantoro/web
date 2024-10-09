@@ -1,6 +1,6 @@
 import { html } from '../../utils/html'
 import LIST_NAV from 'configs/data/home/nav'
-import getListIcon from 'assets/script/server/iconHtml'
+import getListIcon from 'assets/script/dev/iconHtml'
 
 export default function Title(index: number, content?: string | string[]) {
   const { title, link,icon } = LIST_NAV[index]

@@ -1,9 +1,9 @@
 import { html } from '../../utils/html'
 import Darkmode from '../darkBtn'
 import LIST_NAV from 'configs/data/home/nav'
-import getIconHtml from 'assets/script/server/iconHtml'
+import getIconHtml from 'assets/script/dev/iconHtml'
 
-const HTML_LIST_NAV = LIST_NAV.map(({ title, link,icon }) => {
+const HTML_LIST_NAV = LIST_NAV.map(({ title, link, icon }) => {
   const slug = link != undefined ? link : title
   return html`
     <li class="m-auto align-middle">
@@ -11,7 +11,7 @@ const HTML_LIST_NAV = LIST_NAV.map(({ title, link,icon }) => {
         href="#${slug}"
         class="tooltip md:tooltip-left m-1 capitalize font-Rokkit font-bold"
         data-tip="${title}">
-        ${getIconHtml(icon,title)}
+        ${getIconHtml(icon, title)}
       </a>
     </li>
   `

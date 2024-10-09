@@ -1,11 +1,11 @@
 import LIST_NVIM from 'configs/data/home/contents/listNvim'
 import LIST_WEB from 'configs/data/home/contents/listWeb'
 import { html } from '../../utils/html'
-import getIconHtml from 'assets/script/server/iconHtml'
+import getIconHtml from 'assets/script/dev/iconHtml'
 
 const ICONS = {
-  web: getIconHtml('/icons/list/web.svg','web'),
-  repo: getIconHtml('/icons/list/repo.svg','repo'),
+  web: getIconHtml('/icons/list/web.svg', 'web'),
+  repo: getIconHtml('/icons/list/repo.svg', 'repo'),
 }
 
 export const HTML_LIST_WEB = LIST_WEB.map(({ title, web, repo }) => {

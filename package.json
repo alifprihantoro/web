@@ -7,15 +7,14 @@
     "getContent": "git clone https://github.com/alifprihantoro/new-content.git --depth=1 contents",
     "getRender": "git clone https://github.com/alifprihantoro/new-content.git --depth=1 contents",
     "init": "concurrently \"pnpm getContent\" \"pnpm getRender\"",
-    "build:assets": "pnpm --filter assets build",
-    "build:tailwind": "CONTENT_TYPE=home tailwindcss -i ./assets/tailwind.css -o ./public/main.css",
-    "build:web": "pnpm --filter web build",
-    "dev:assets": "pnpm --filter assets dev",
-    "tailwind-home:dev": "CONTENT_TYPE=home tailwindcss -i ./assets/tailwind.css -o ./public/main.css --watch",
-    "tailwind-web:dev": "CONTENT_TYPE=web tailwindcss -i ./assets/tailwind.css -o ./public/main.css --watch",
-    "dev:home": "concurrently \"pnpm tailwind-home:dev\" \"pnpm --filter @ui/home dev\" \"pnpm assets\" ",
-    "dev:web": "concurrently \"pnpm tailwind-web:dev\" \"pnpm --filter web dev\" \"pnpm assets\""
+    "build:assets": "pnpm --filter assets build"
   },
+  "workspaces":[
+  "ui/*",
+  "web",
+  "configs",
+  "assets"
+  ],
   "keywords": [],
   "author": "",
   "license": "ISC",

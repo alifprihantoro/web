@@ -1,5 +1,5 @@
 import { html } from '../../utils/html'
-import getIcons from 'assets/script/server/iconHtml'
+import getIcons from 'assets/script/dev/iconHtml'
 
 export default html`
   <button

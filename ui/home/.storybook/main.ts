@@ -3,6 +3,7 @@ import type Targs from '@storybook/html-vite'
 const config: Targs.StorybookConfig = {
   staticDirs: ['../../../public/'],
   stories: [
+    '../src/**/*.mdx',
     '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)',
   ],
   addons: [
