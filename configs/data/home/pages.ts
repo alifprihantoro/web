@@ -5,5 +5,5 @@ export default {
   username: '@alifprihantoro',
   image: '/profil.png',
   type: 'web',
-  icon: '/favicon.ico',
+  icon: '/favicon/favicon.ico',
 }
